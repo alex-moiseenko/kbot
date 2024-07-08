@@ -6,7 +6,7 @@ This project implements a Telegram bot using Go and the gopkg.in/telebot.v3 libr
 
 This bot provides weather information based on user location and sends random cat pictures upon command.
 
-## Bot exmample
+## Bot example
 
 [t.me/alex_m_devops_kbot](t.me/alex_m_devops_kbot)
 
