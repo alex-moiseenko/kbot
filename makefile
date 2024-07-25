@@ -65,4 +65,5 @@ push:
 
 clean:
 	rm -rf kbot-${TARGETOS}-${TARGETARCH}
-	docker rmi ${REGESTRY}/${APP}:${VERSION}-${TARGETOS}-${TARGETARCH} || true
+	-docker ps -a -q --filter ancestor=${REGISTRY}/${APP}:${VERSION}-${TARGETARCH} | xargs -r docker rm -f
+	-docker rmi -f ${REGISTRY}/${APP}:${VERSION}-${TARGETARCH} || true
