@@ -9,6 +9,8 @@ RUN make TARGETOS=${TARGETOS} TARGETARCH=${TARGETARCH} build
 
 FROM scratch
 WORKDIR /
-COPY --from=builder /go/src/app/kbot .
+ARG TARGETOS=linux
+ARG TARGETARCH=arm64
+COPY --from=builder /go/src/app/kbot-${TARGETOS}-${TARGETARCH} /kbot
 COPY --from=alpine:latest /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 ENTRYPOINT ["./kbot"]
