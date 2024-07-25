@@ -1,9 +1,11 @@
-FROM golang:1.22.3 AS builder
+FROM golang:1.20 AS builder
 
 WORKDIR /go/src/app
 COPY . .
 
-RUN make build
+ARG TARGETOS=linux
+ARG TARGETARCH=arm64
+RUN make TARGETOS=${TARGETOS} TARGETARCH=${TARGETARCH} build
 
 FROM scratch
 WORKDIR /
