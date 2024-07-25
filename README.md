@@ -6,7 +6,7 @@ This project implements a Telegram bot using Go and the gopkg.in/telebot.v3 libr
 
 This bot provides weather information based on user location and sends random cat pictures upon command.
 
-## Bot example
+## Example
 
 [t.me/alex_m_devops_kbot](t.me/alex_m_devops_kbot)
 
@@ -25,8 +25,9 @@ export TELE_TOKEN=<your-telegram-bot-token>
 2. Build and run the bot:
 
 ```bash
-go build -ldflags "-X="github.com/alex-moiseenko/kbot/cmd.appVersion=v1.0.2
-./kbot
+go build -ldflags "-X="github.com/alex-moiseenko/kbot/cmd.appVersion=<app-version>
+
+./kbot start
 ```
 
 ## Usage
