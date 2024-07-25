@@ -52,7 +52,7 @@ func getWeather(lat, lon float32) (WeatherResponse, error) {
 // kbotCmd represents the kbot command
 var kbotCmd = &cobra.Command{
 	Use:     "kbot",
-	Aliases: []string{"go"},
+	Aliases: []string{"start"},
 	Short:   "Starts telegram bot",
 	Long:    `Starts telegram bot server which can respond on commands`,
 	Run: func(cmd *cobra.Command, args []string) {
